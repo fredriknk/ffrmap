@@ -141,3 +141,7 @@ dmypy.json
 
 #Pycharm Idea folder
 /.idea
+
+#temp files
+temp.*
+*.tmp

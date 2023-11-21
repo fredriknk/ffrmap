@@ -26,7 +26,6 @@ var currentColoringMode = 'time'; // Default coloring mode
 
 // Function to update breadcrumbs and check for stationary status
 function updateBreadcrumbs(latestData) {
-    console.log(latestData.timestamp)
     if (shouldAddBreadcrumb(latestData)) {
         addBreadcrumb(latestData);
         resetStationaryStart();
@@ -110,7 +109,6 @@ function checkStationaryStatus(currentTimestampString) {
         // Rover has been stationary for too long
         alert('Rover stationary warning!');
     }
-    console.log(stationaryStart);
 }
 function clearBreadcrumbs() {
     breadcrumbs.forEach(breadcrumb => {
@@ -251,7 +249,6 @@ function getcolor(breadcrumb){
         switch (currentColoringMode) {
             case 'time':
                 var ageInSeconds = (new Date() - new Date(breadcrumb.timestamp)) / 1000;
-                console.log(ageInSeconds)
                 color = colorByTime(ageInSeconds);
                 break;
             case 'fix':
